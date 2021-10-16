@@ -87,4 +87,10 @@ class StringCalculatorShould {
         assertEquals(2, stringCalculator.add("2,1001"));
     }
     
+    @Test
+    void string_with_variable_length_delimeter() throws Exception {
+        StringCalculator stringCalculator = new StringCalculator();
+        assertEquals(6, stringCalculator.add("//[***]\n1***2***3"));
+    }
+    
 }
