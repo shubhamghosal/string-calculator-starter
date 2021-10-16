@@ -93,4 +93,10 @@ class StringCalculatorShould {
         assertEquals(6, stringCalculator.add("//[***]\n1***2***3"));
     }
     
+    @Test
+    void string_with_multiple_delimeter() throws Exception {
+        StringCalculator stringCalculator = new StringCalculator();
+        assertEquals(6, stringCalculator.add("//[*][%]\n1*2%3"));
+    }
+    
 }
