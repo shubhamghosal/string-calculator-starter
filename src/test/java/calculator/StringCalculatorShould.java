@@ -50,6 +50,12 @@ class StringCalculatorShould {
         }catch (Exception e) {
 			assertEquals("INVALID input", e.getMessage());
 		}
-        
+    }
+    
+    @Test
+    void string_with_different_delimiters() throws Exception {
+        StringCalculator stringCalculator = new StringCalculator();
+        assertEquals(3, stringCalculator.add("//;\n1;2"));
+        assertEquals(5, stringCalculator.add("//+\n2+3"));
     }
 }
