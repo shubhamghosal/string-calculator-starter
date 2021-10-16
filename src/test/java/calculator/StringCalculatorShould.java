@@ -29,4 +29,10 @@ class StringCalculatorShould {
         StringCalculator stringCalculator = new StringCalculator();
         assertEquals(11, stringCalculator.add("3,8"));
     }
+    
+    @Test
+    void string_with_three_numbers() {
+        StringCalculator stringCalculator = new StringCalculator();
+        assertEquals(17, stringCalculator.add("3,5,7,1,1"));
+    }
 }
