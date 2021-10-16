@@ -4,6 +4,7 @@ class StringCalculator {
 
 	public int add(String input) throws Exception {
 		int totalSum = 0;
+		String negatives = "";
 
 		// Checking for empty string
 		if (input.length() == 0)
@@ -40,7 +41,6 @@ class StringCalculator {
 		}
 
 		String[] numbersArray = input.split(delimiter);
-		String negatives = "";
 
 		// Adding numbers
 		for (String num : numbersArray) {
