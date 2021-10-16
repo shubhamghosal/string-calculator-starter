@@ -70,5 +70,16 @@ class StringCalculatorShould {
 		}
     }
     
+    @Test
+    void string_with_multiple_negative_number() {
+        StringCalculator stringCalculator = new StringCalculator();
+        try {
+        	assertEquals(1, stringCalculator.add("//;\n-1;-2;6"));
+        	throw new Exception("Failed");
+        }catch (Exception e) {
+			assertEquals("Negatives not allowed : -1, -2", e.getMessage());
+		}
+    }
+    
     
 }
