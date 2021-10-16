@@ -7,32 +7,38 @@ import static org.junit.jupiter.api.Assertions.*;
 class StringCalculatorShould {
 
     @Test
-    void empty_string_should_return_0() {
+    void empty_string_should_return_0() throws Exception {
         StringCalculator stringCalculator = new StringCalculator();
         assertEquals(0, stringCalculator.add(""));
     }
 
     @Test
-    void string_with_single_number_should_return_number_as_int() {
+    void string_with_single_number_should_return_number_as_int() throws Exception {
         StringCalculator stringCalculator = new StringCalculator();
         assertEquals(1, stringCalculator.add("1"));
     }
     
     @Test
-    void string_with_two_numbers_one() {
+    void string_with_two_numbers_one() throws Exception {
         StringCalculator stringCalculator = new StringCalculator();
         assertEquals(3, stringCalculator.add("1,2"));
     }
     
     @Test
-    void string_with_two_numbers_two() {
+    void string_with_two_numbers_two() throws Exception {
         StringCalculator stringCalculator = new StringCalculator();
         assertEquals(11, stringCalculator.add("3,8"));
     }
     
     @Test
-    void string_with_three_numbers() {
+    void string_with_three_numbers() throws Exception {
         StringCalculator stringCalculator = new StringCalculator();
         assertEquals(17, stringCalculator.add("3,5,7,1,1"));
+    }
+    
+    @Test
+    void string_with_new_line() throws Exception {
+        StringCalculator stringCalculator = new StringCalculator();
+        assertEquals(6, stringCalculator.add("1\n2,3"));
     }
 }
