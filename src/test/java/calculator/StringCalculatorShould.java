@@ -81,5 +81,10 @@ class StringCalculatorShould {
 		}
     }
     
+    @Test
+    void string_with_greater_than_1000() throws Exception {
+        StringCalculator stringCalculator = new StringCalculator();
+        assertEquals(2, stringCalculator.add("2,1001"));
+    }
     
 }
