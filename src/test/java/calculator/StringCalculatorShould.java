@@ -17,4 +17,16 @@ class StringCalculatorShould {
         StringCalculator stringCalculator = new StringCalculator();
         assertEquals(1, stringCalculator.add("1"));
     }
+    
+    @Test
+    void string_with_two_numbers_one() {
+        StringCalculator stringCalculator = new StringCalculator();
+        assertEquals(3, stringCalculator.add("1,2"));
+    }
+    
+    @Test
+    void string_with_two_numbers_two() {
+        StringCalculator stringCalculator = new StringCalculator();
+        assertEquals(11, stringCalculator.add("3,8"));
+    }
 }
