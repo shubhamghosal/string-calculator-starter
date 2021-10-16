@@ -27,7 +27,7 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew build
     - name: Build and Push Docker Image
-      uses: shubhamghosal/string-calculator-starter
+      uses: shubhamghosal/string-calculator-starter@v1
       with:
        image: shubhamghosal/string-calculator-starter
        registry: docker.io
