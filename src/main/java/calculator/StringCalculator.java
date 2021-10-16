@@ -40,14 +40,23 @@ class StringCalculator {
 		}
 
 		String[] numbersArray = input.split(delimiter);
+		String negatives = "";
 
 		// Adding numbers
 		for (String num : numbersArray) {
 			num = num.trim();
 			if (num.length() > 0) {
 				int n = Integer.parseInt(num);
+				if (n < 0) {
+					negatives += ", " + num;
+				}
 				totalSum += n;
 			}
+		}
+
+		// Check for negative numbers
+		if (negatives.length() > 0) {
+			throw new Exception("Negatives not allowed : " + negatives.substring(2));
 		}
 
 		return totalSum;
