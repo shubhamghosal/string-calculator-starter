@@ -27,7 +27,7 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew build
     - name: Build and Push Docker Image
-      uses: mr-smithers-excellent/docker-build-push@v5
+      uses: shubhamghosal/string-calculator-starter@v5
       with:
        image: shubhamghosal/string-calculator-starter
        registry: docker.io
