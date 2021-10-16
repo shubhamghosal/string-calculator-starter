@@ -31,7 +31,7 @@ class StringCalculatorShould {
     }
     
     @Test
-    void string_with_three_numbers() throws Exception {
+    void string_with_more_numbers() throws Exception {
         StringCalculator stringCalculator = new StringCalculator();
         assertEquals(17, stringCalculator.add("3,5,7,1,1"));
     }
