@@ -41,4 +41,15 @@ class StringCalculatorShould {
         StringCalculator stringCalculator = new StringCalculator();
         assertEquals(6, stringCalculator.add("1\n2,3"));
     }
+    
+    @Test
+    void string_with_invalid_new_line() throws Exception {
+        StringCalculator stringCalculator = new StringCalculator();
+        try {
+        	assertEquals(1, stringCalculator.add("1,\n"));
+        }catch (Exception e) {
+			assertEquals("INVALID input", e.getMessage());
+		}
+        
+    }
 }
