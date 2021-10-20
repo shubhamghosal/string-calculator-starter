@@ -27,7 +27,8 @@ class StringCalculator {
 					input = input.substring(endIndex + 1).replaceAll("[" + delimiter + "+]", ";");
 					delimiter = ";";
 				}
-			} else {
+			}
+			else {
 				delimiter = "" + input.charAt(2);
 				input = input.substring(3);
 			}
@@ -39,10 +40,39 @@ class StringCalculator {
 		} else {
 			input = input.replace("\n", delimiter);
 		}
+		
+		// Even and Odd based string manipulation
+		if (input.startsWith("O")) {
+			input = input.substring(1);
+			String[] numArray = input.split(delimiter);
+			for (String num : numArray) {
+				num = num.trim();
+				if (num.length() > 0) {
+					int n = Integer.parseInt(num);
+					if (n %2 != 0) {
+						totalSum += n;
+					}
+				}
+			}
+		}
+		
+		else if (input.startsWith("E")) {
+			input = input.substring(1);
+			String[] numArray = input.split(delimiter);
+			for (String num : numArray) {
+				num = num.trim();
+				if (num.length() > 0) {
+					int n = Integer.parseInt(num);
+					if (n %2 == 0) {
+						totalSum += n;
+					}
+				}
+			}
+		}
 
-		String[] numbersArray = input.split(delimiter);
-
+		else {
 		// Adding numbers
+		String[] numbersArray = input.split(delimiter);
 		for (String num : numbersArray) {
 			num = num.trim();
 			if (num.length() > 0) {
@@ -50,15 +80,19 @@ class StringCalculator {
 				if (n < 0) {
 					negatives += ", " + num;
 				}
-				if (n <= 1000)
+				if (n <= 1000) {
 					totalSum += n;
+				}
 			}
+		}
 		}
 
 		// Check for negative numbers
 		if (negatives.length() > 0) {
 			throw new Exception("Negatives not allowed : " + negatives.substring(2));
 		}
+		
+
 
 		return totalSum;
 	}

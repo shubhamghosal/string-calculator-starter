@@ -104,5 +104,17 @@ class StringCalculatorShould {
 		StringCalculator stringCalculator = new StringCalculator();
 		assertEquals(6, stringCalculator.add("//[*******][%%%]\n1****2%%%%%3"));
 	}
+	
+	@Test
+	void string_with_odd() throws Exception {
+		StringCalculator stringCalculator = new StringCalculator();
+		assertEquals(4, stringCalculator.add("O1,2,3"));
+	}
+	
+	@Test
+	void string_with_even() throws Exception {
+		StringCalculator stringCalculator = new StringCalculator();
+		assertEquals(2, stringCalculator.add("E1,2,3"));
+	} 
 
 }
